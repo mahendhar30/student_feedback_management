@@ -1,0 +1,42 @@
+﻿@model List<student_feedback_management.Models.Feedback>
+
+@{
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <div>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Enrolment No</th>
+                <th>Student Name</th>
+                <th>Subject</th>
+                <th>Rating</th>
+                <th>Comments</th>
+            </tr>
+
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.EnrolmentNo</td>
+                    <td>@i.StudentName </td>
+                    <td>@i.Subject</td>
+                    <td>@i.Rating</td>
+                    <td>@i.Comments</td>
+                </tr>
+            }
+        </table>
+        <br />
+        @Html.ActionLink("Give Another Feedback", "Create", "Feedback")
+        <br />
+        <br />
+        @Html.ActionLink("Back to Home", "Index", "Feedback")
+    </div>
+</body>
+</html>
